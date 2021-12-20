@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import store from './redux/store';
 import toastr from 'toastr';
 import 'toastr/build/toastr.min.css';
+import { BrowserRouter } from 'react-router-dom';
 
 toastr.options = {
 	closeButton: false,
@@ -22,9 +23,13 @@ toastr.options = {
 	showMethod: 'fadeIn',
 	hideMethod: 'fadeOut',
 };
+
 reactDOM.render(
-	<Provider store={store}>
-		<App />
-	</Provider>,
+	<BrowserRouter>
+		<Provider store={store}>
+			<App />
+		</Provider>
+	</BrowserRouter>,
+
 	document.getElementById('root')
 );

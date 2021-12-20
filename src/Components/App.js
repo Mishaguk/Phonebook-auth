@@ -3,13 +3,13 @@ import ContactList from './ContactList/ContactList';
 import InputForm from './InputForm/InputForm';
 import Filter from './Filter/Filter';
 import { getLoading } from '../redux/phoneBook/selectors';
-
 import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
 import Loader from 'react-loader-spinner';
 import * as operations from '../redux/phoneBook/phonebookOperations';
-
+import HomePage from './Pages/HomePage';
 import { useDispatch, useSelector } from 'react-redux';
-
+import { Route, Routes } from 'react-router-dom';
+import Navigation from './Navigation/Navigation';
 const App = () => {
 	const dispatch = useDispatch();
 
@@ -21,7 +21,11 @@ const App = () => {
 
 	return (
 		<div>
+			<Navigation />
 			<h1>Phonebook</h1>
+			<Routes>
+				<Route path='/Home' exact component={HomePage} />
+			</Routes>
 			<InputForm />
 			<Filter />
 			{isLoading && (

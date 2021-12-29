@@ -1,10 +1,11 @@
 import reactDOM from 'react-dom';
 import App from './Components/App';
 import { Provider } from 'react-redux';
-import store from './redux/store';
+import { store, persistor } from './redux/store';
 import toastr from 'toastr';
 import 'toastr/build/toastr.min.css';
 import { BrowserRouter } from 'react-router-dom';
+import { PersistGate } from 'redux-persist/integration/react';
 
 toastr.options = {
 	closeButton: false,
@@ -25,11 +26,12 @@ toastr.options = {
 };
 
 reactDOM.render(
-	<BrowserRouter>
-		<Provider store={store}>
-			<App />
-		</Provider>
-	</BrowserRouter>,
-
+	<Provider store={store}>
+		<BrowserRouter>
+			<PersistGate loading={null} persistor={persistor}>
+				<App />
+			</PersistGate>
+		</BrowserRouter>
+	</Provider>,
 	document.getElementById('root')
 );

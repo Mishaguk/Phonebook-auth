@@ -1,0 +1,11 @@
+.form {
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+
+	height: 120px;
+	width: 240px;
+
+	padding: 5px 5px 5px 55px;
+}

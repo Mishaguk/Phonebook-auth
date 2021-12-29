@@ -1,0 +1,21 @@
+.Tab-styles {
+	background-color: white;
+	color: rgb(0, 0, 0);
+	border: 1px solid rgb(0, 0, 0);
+	padding: 10px 20px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-style: initial;
+}
+.div-styles {
+	border: 0px rgb(41, 40, 40) solid;
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.274);
+	width: 700px;
+}
+
+a:hover,
+a:active {
+	background-color: rgb(206, 203, 203);
+	color: white;
+}

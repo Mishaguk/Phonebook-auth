@@ -9,7 +9,7 @@ import * as operations from '../../redux/phoneBook/phonebookOperations';
 const InputForm = () => {
 	const dispatch = useDispatch();
 	const [name, setName] = useState('');
-	const [phone, setPhone] = useState('');
+	const [number, setNumber] = useState('');
 	const isExists = useSelector(getIsContactExists(name));
 
 	const handleSubmit = e => {
@@ -23,11 +23,11 @@ const InputForm = () => {
 		dispatch(
 			operations.addContact({
 				name,
-				phone,
+				number,
 			})
 		);
 		setName('');
-		setPhone('');
+		setNumber('');
 	};
 	return (
 		<div>
@@ -46,8 +46,8 @@ const InputForm = () => {
 				<input
 					type='tel'
 					name='number'
-					value={phone}
-					onChange={e => setPhone(e.target.value)}
+					value={number}
+					onChange={e => setNumber(e.target.value)}
 					pattern='\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}'
 					title='Номер телефона должен состоять цифр и может содержать пробелы, тире, круглые скобки и может начинаться с +'
 					required

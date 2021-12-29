@@ -1,8 +1,8 @@
 import React from 'react';
-
+import './HomePage.css';
 const HomePage = () => (
 	<div>
-		<h1>Добро пожаловть !</h1>
+		<h1 className='welcome'>Welcome!</h1>
 	</div>
 );
 

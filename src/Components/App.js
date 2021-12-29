@@ -13,27 +13,27 @@ import LoginPage from './Pages/LoginPage/LoginPage';
 import AppBar from './AppBar';
 
 const App = () => {
-	const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
-	useEffect(() => {
-		dispatch(operations.fetchContacts());
-	}, []);
+  useEffect(() => {
+    dispatch(authOperations.getCurrentUser());
+  }, [dispatch]);
 
-	useEffect(() => {
-		dispatch(authOperations.getCurrentUser());
-	}, []);
+  useEffect(() => {
+    dispatch(operations.fetchContacts());
+  }, [dispatch]);
 
-	return (
-		<div>
-			<AppBar />
-			<Routes>
-				<Route path='/login' element={<LoginPage />} />
-				<Route path='/Home' element={<HomePage />} />
-				<Route path='/contacts' element={<PhoneBookPage />} />
-				<Route path='/register' element={<AuthorizationPage />} />
-			</Routes>
-		</div>
-	);
+  return (
+    <div>
+      <AppBar />
+      <Routes>
+        <Route path='/login' element={<LoginPage />} />
+        <Route path='/Home' element={<HomePage />} />
+        <Route path='/contacts' element={<PhoneBookPage />} />
+        <Route path='/register' element={<AuthorizationPage />} />
+      </Routes>
+    </div>
+  );
 };
 
 export default App;

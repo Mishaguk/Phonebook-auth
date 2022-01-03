@@ -1,13 +1,27 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './LoginPage.css';
 import { useDispatch } from 'react-redux';
 import * as operations from '../../../redux/auth/authOperations';
+import { useSelector } from 'react-redux';
+import { getIsAuthenticated } from '../../../redux/auth/authSelectors';
+import { useNavigate } from 'react-router';
+
 
 const LoginPage = () => {
 	const dispatch = useDispatch();
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
+	const isAuthenticated = useSelector(getIsAuthenticated);
+	let navigate = useNavigate();
+
+	useEffect(() => {
+		if (isAuthenticated) {
+			navigate('/contacts');
+
+			return;
+		}
+	});
 
 	const handleSubmit = e => {
 		e.preventDefault();

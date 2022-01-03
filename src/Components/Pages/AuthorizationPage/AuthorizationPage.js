@@ -1,14 +1,26 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './AuthorizationPage.css';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import * as operations from '../../../redux/auth/authOperations';
+import { useSelector } from 'react-redux';
+import { getIsAuthenticated } from '../../../redux/auth/authSelectors';
+import { useNavigate } from 'react-router';
 
 const Authorization = () => {
 	const dispatch = useDispatch();
 	const [name, setName] = useState('');
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
+	const isAuthenticated = useSelector(getIsAuthenticated);
+	let navigate = useNavigate();
+	useEffect(() => {
+		if (isAuthenticated) {
+			navigate('/contacts');
+
+			return;
+		}
+	});
 
 	const handleSubmit = e => {
 		e.preventDefault();

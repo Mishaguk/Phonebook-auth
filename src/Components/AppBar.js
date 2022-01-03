@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import Navigation from './Navigation/Navigation';
 import UserMenu from './UserMenu/UserMenu';
 import { getIsAuthenticated } from '../redux/auth/authSelectors';
+import AuthNav from './Navigation/AuthNav';
 
 const styles = {
 	header: {
@@ -19,7 +20,7 @@ const AppBar = () => {
 	return (
 		<header style={styles.header}>
 			<Navigation />
-			{isAuthenticated && <UserMenu />}
+			{isAuthenticated ? <UserMenu /> : <AuthNav />}
 		</header>
 	);
 };

@@ -9,7 +9,7 @@ const UserMenu = () => {
 	const name = useSelector(getUserName);
 
 	return (
-		<div>
+		<div s>
 			<h2>Welcome , {name}</h2>
 			<button type='button' onClick={() => dispatch(authOperations.logOut())}>
 				Logout

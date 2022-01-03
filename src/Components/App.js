@@ -1,9 +1,5 @@
-import React, { useEffect } from 'react';
-
 import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
-import * as operations from '../redux/phoneBook/phonebookOperations';
-import { useDispatch } from 'react-redux';
-import * as authOperations from '../redux/auth/authOperations';
+
 // ROUTERS -------------------------------------------------------------
 import { Route, Routes } from 'react-router-dom';
 import PhoneBookPage from './Pages/PhonebookPage/PhoneBookPage';
@@ -13,27 +9,20 @@ import LoginPage from './Pages/LoginPage/LoginPage';
 import AppBar from './AppBar';
 
 const App = () => {
-  const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(authOperations.getCurrentUser());
-  }, [dispatch]);
 
-  useEffect(() => {
-    dispatch(operations.fetchContacts());
-  }, [dispatch]);
 
-  return (
-    <div>
-      <AppBar />
-      <Routes>
-        <Route path='/login' element={<LoginPage />} />
-        <Route path='/Home' element={<HomePage />} />
-        <Route path='/contacts' element={<PhoneBookPage />} />
-        <Route path='/register' element={<AuthorizationPage />} />
-      </Routes>
-    </div>
-  );
+	return (
+		<div>
+			<AppBar />
+			<Routes>
+				<Route path='/login' exact element={<LoginPage />} />
+				<Route path='/Home' exact element={<HomePage />} />
+				<Route path='/contacts' exact element={<PhoneBookPage />} />
+				<Route path='/register' exact element={<AuthorizationPage />} />
+			</Routes>
+		</div>
+	);
 };
 
 export default App;

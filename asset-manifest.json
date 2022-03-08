@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/Phonebook-auth/static/css/main.00efbfd6.chunk.css",
-    "main.js": "/Phonebook-auth/static/js/main.466fe27e.chunk.js",
-    "main.js.map": "/Phonebook-auth/static/js/main.466fe27e.chunk.js.map",
-    "runtime-main.js": "/Phonebook-auth/static/js/runtime-main.052e5594.js",
-    "runtime-main.js.map": "/Phonebook-auth/static/js/runtime-main.052e5594.js.map",
-    "static/css/2.3f438871.chunk.css": "/Phonebook-auth/static/css/2.3f438871.chunk.css",
-    "static/js/2.f2a2e7ee.chunk.js": "/Phonebook-auth/static/js/2.f2a2e7ee.chunk.js",
-    "static/js/2.f2a2e7ee.chunk.js.map": "/Phonebook-auth/static/js/2.f2a2e7ee.chunk.js.map",
-    "index.html": "/Phonebook-auth/index.html",
-    "static/css/2.3f438871.chunk.css.map": "/Phonebook-auth/static/css/2.3f438871.chunk.css.map",
-    "static/css/main.00efbfd6.chunk.css.map": "/Phonebook-auth/static/css/main.00efbfd6.chunk.css.map",
-    "static/js/2.f2a2e7ee.chunk.js.LICENSE.txt": "/Phonebook-auth/static/js/2.f2a2e7ee.chunk.js.LICENSE.txt"
+    "main.css": "/Mishaguk/Phonebook-auth/static/css/main.0d622d0b.chunk.css",
+    "main.js": "/Mishaguk/Phonebook-auth/static/js/main.8ac8426e.chunk.js",
+    "main.js.map": "/Mishaguk/Phonebook-auth/static/js/main.8ac8426e.chunk.js.map",
+    "runtime-main.js": "/Mishaguk/Phonebook-auth/static/js/runtime-main.e637444b.js",
+    "runtime-main.js.map": "/Mishaguk/Phonebook-auth/static/js/runtime-main.e637444b.js.map",
+    "static/css/2.3f438871.chunk.css": "/Mishaguk/Phonebook-auth/static/css/2.3f438871.chunk.css",
+    "static/js/2.bd90ed15.chunk.js": "/Mishaguk/Phonebook-auth/static/js/2.bd90ed15.chunk.js",
+    "static/js/2.bd90ed15.chunk.js.map": "/Mishaguk/Phonebook-auth/static/js/2.bd90ed15.chunk.js.map",
+    "index.html": "/Mishaguk/Phonebook-auth/index.html",
+    "static/css/2.3f438871.chunk.css.map": "/Mishaguk/Phonebook-auth/static/css/2.3f438871.chunk.css.map",
+    "static/css/main.0d622d0b.chunk.css.map": "/Mishaguk/Phonebook-auth/static/css/main.0d622d0b.chunk.css.map",
+    "static/js/2.bd90ed15.chunk.js.LICENSE.txt": "/Mishaguk/Phonebook-auth/static/js/2.bd90ed15.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.052e5594.js",
+    "static/js/runtime-main.e637444b.js",
     "static/css/2.3f438871.chunk.css",
-    "static/js/2.f2a2e7ee.chunk.js",
-    "static/css/main.00efbfd6.chunk.css",
-    "static/js/main.466fe27e.chunk.js"
+    "static/js/2.bd90ed15.chunk.js",
+    "static/css/main.0d622d0b.chunk.css",
+    "static/js/main.8ac8426e.chunk.js"
   ]
 }

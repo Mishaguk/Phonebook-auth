@@ -6,12 +6,27 @@ import * as operations from '../../../redux/auth/authOperations';
 import { useSelector } from 'react-redux';
 import { getIsAuthenticated } from '../../../redux/auth/authSelectors';
 import { useNavigate } from 'react-router';
+import slide from '../../../transitions/Slides.module.css';
+import { CSSTransition } from 'react-transition-group';
+import Button from '@mui/material/Button';
+import Avatar from '@mui/material/Avatar';
+import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
+import Typography from '@mui/material/Typography';
+import Box from '@mui/material/Box';
+import Grid from '@mui/material/Grid';
+import TextField from '@mui/material/TextField';
+import Container from '@mui/material/Container';
+import Link from '@mui/material/Link';
+import CssBaseline from '@mui/material/CssBaseline';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 const Authorization = () => {
 	const dispatch = useDispatch();
 	const [name, setName] = useState('');
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
+	const [isLoaded, setIsLoaded] = useState(false);
+
 	const isAuthenticated = useSelector(getIsAuthenticated);
 	let navigate = useNavigate();
 	useEffect(() => {
@@ -21,6 +36,10 @@ const Authorization = () => {
 			return;
 		}
 	});
+
+	useEffect(() => {
+		setIsLoaded(true);
+	}, []);
 
 	const handleSubmit = e => {
 		e.preventDefault();
@@ -37,36 +56,98 @@ const Authorization = () => {
 		setPassword('');
 	};
 
+	const theme = createTheme();
+
 	return (
-		<div>
-			<form onSubmit={handleSubmit} className='form'>
-				<span>Login</span>
-				<input
-					value={name}
-					name='login'
-					onChange={e => setName(e.target.value)}
-					type='text'
-					placeholder='Enter your login'
-				/>
-				<span>Email</span>
-				<input
-					value={email}
-					name='email'
-					onChange={e => setEmail(e.target.value)}
-					type='text'
-					placeholder='Enter your email'
-				/>
-				<span>Password</span>
-				<input
-					value={password}
-					name='password'
-					onChange={e => setPassword(e.target.value)}
-					type='password'
-					placeholder='Enter your password'
-				/>
-				<button type='submit'>Register</button>
-			</form>
-		</div>
+		<ThemeProvider theme={theme}>
+			<CSSTransition
+				in={isLoaded}
+				timeout={500}
+				classNames={slide}
+				unmountOnExit
+			>
+				<Container component='main' maxWidth='xs'>
+					<CssBaseline />
+					<Box
+						sx={{
+							marginTop: 8,
+							display: 'flex',
+							flexDirection: 'column',
+							alignItems: 'center',
+						}}
+					>
+						<Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+							<LockOutlinedIcon />
+						</Avatar>
+						<Typography component='h1' variant='h5'>
+							Sign up
+						</Typography>
+						<Box
+							component='form'
+							noValidate
+							onSubmit={handleSubmit}
+							sx={{ mt: 3 }}
+						>
+							<Grid container spacing={2}>
+								<Grid item xs={12} sm={12}>
+									<TextField
+										autoComplete='given-name'
+										name='firstName'
+										required
+										fullWidth
+										id='firstName'
+										label='Login'
+										autoFocus
+										value={name}
+										onChange={e => setName(e.target.value)}
+									/>
+								</Grid>
+								<Grid item xs={12}>
+									<TextField
+										required
+										fullWidth
+										name='password'
+										label='Password'
+										type='password'
+										id='password'
+										autoComplete='new-password'
+										value={password}
+										onChange={e => setPassword(e.target.value)}
+									/>
+								</Grid>
+								<Grid item xs={12}>
+									<TextField
+										required
+										fullWidth
+										id='email'
+										label='Email Address'
+										name='email'
+										autoComplete='email'
+										value={email}
+										onChange={e => setEmail(e.target.value)}
+									/>
+								</Grid>
+							</Grid>
+							<Button
+								type='submit'
+								fullWidth
+								variant='contained'
+								sx={{ mt: 3, mb: 2 }}
+							>
+								Sign Up
+							</Button>
+							<Grid container justifyContent='flex-end'>
+								<Grid item>
+									<Link href='#/login' variant='body2'>
+										Already have an account? Sign in
+									</Link>
+								</Grid>
+							</Grid>
+						</Box>
+					</Box>
+				</Container>
+			</CSSTransition>
+		</ThemeProvider>
 	);
 };
 

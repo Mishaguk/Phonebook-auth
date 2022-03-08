@@ -13,3 +13,5 @@ export const getIsContactExists = name => {
 export const getFilter = state => state.phoneBookReducer.filter;
 
 export const getLoading = state => state.phoneBookReducer.loading;
+
+

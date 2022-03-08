@@ -9,9 +9,6 @@ import LoginPage from './Pages/LoginPage/LoginPage';
 import AppBar from './AppBar';
 
 const App = () => {
-
-
-
 	return (
 		<div>
 			<AppBar />
